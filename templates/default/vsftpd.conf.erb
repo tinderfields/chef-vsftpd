@@ -70,3 +70,6 @@ local_root=<%= node[:vsftpd][:local_root] %>
 <% if node[:vsftpd][:deny_file].count >= 1 %>
 deny_file={<%= node[:vsftpd][:deny_file].join(",") %>}
 <% end %>
+<% if node[:vsftpd][:allow_writeable_chroot] %>
+allow_writeable_chroot=YES
+<% end %>
